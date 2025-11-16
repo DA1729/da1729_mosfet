@@ -48,7 +48,7 @@ output conductance (g_ds = ∂i_d/∂v_ds):
 
 ### implementation details
 
-- location: `models/mos_model.h`, `models/mos_model.cpp`
+- location: `models/square_law/mos_model.h`, `models/square_law/mos_model.cpp`
 - `mosfet_model` class with parameters v_th and k
 - `mosfet_output` struct containing i_d, g_m, g_ds
 - smooth transitions between operating regions using std::min/max

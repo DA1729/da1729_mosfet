@@ -2,21 +2,21 @@
 #include <algorithm>
 
 struct mosfet_output {
-	double I_D;		// drain current
-	double G_m;		// transconductance
-	double G_ds;		// output conductance
+	double i_d;
+	double g_m;
+	double g_ds;
 };
 
 
 
 class mosfet_model{
-	private: 
-		const double V_TH;
-		const double K;
+	private:
+		const double v_th;
+		const double k;
 
 	public:
-		mosfet_model(double vth, double u_cox_wl): V_TH(vth, K(u_cox_WL) {}
+		mosfet_model(double v_th, double u_cox_wl): v_th(v_th), k(u_cox_wl) {}
 
 
-		mosfet_output calculate(double vgs, double vds);
+		mosfet_output calculate(double v_gs, double v_ds);
 };

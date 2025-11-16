@@ -2,6 +2,19 @@
 
 advanced mosfet modeling project - incrementally building complexity for accurate device simulation
 
+## project structure
+
+```
+models/        - complete mosfet model implementations
+effects/       - isolated physical effect implementations
+parameters/    - parameter extraction and technology files
+analysis/      - iv curve generation and characteristic analysis
+validation/    - tests and benchmarks
+examples/      - usage demonstrations
+utils/         - shared utilities and helpers
+docs/          - theory, derivations, and documentation
+```
+
 ## current implementation
 
 ### basic square-law model
@@ -33,8 +46,9 @@ output conductance (g_ds = ∂i_d/∂v_ds):
 - triode: g_ds = k × (v_ov - v_ds)
 - saturation: g_ds = 0
 
-### structure
+### implementation details
 
+- location: `models/mos_model.h`, `models/mos_model.cpp`
 - `mosfet_model` class with parameters v_th and k
 - `mosfet_output` struct containing i_d, g_m, g_ds
 - smooth transitions between operating regions using std::min/max
